@@ -12,6 +12,7 @@ body, html {
     height: 80px;
     background-color: white;
     position: relative;
+    border: 1px solid black;
   }
 
   .header-icons {
