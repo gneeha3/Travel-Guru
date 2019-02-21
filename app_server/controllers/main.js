@@ -67,7 +67,31 @@ function sendBody(text, result)
 module.exports.home = function(req,res) 
 {
 	res.sendFile('landing.html', { root: path.join(__dirname, '../../public') });
-    //res.sendFile('landing.html');
-	//alert("Hello! I am an alert box!!");
+
 };
 
+//Get registration page
+module.exports.register = function(req,res) 
+{
+	res.sendFile('register.html', { root: path.join(__dirname, '../../public') });
+
+};
+
+//Get login page
+module.exports.login = function(req,res) 
+{
+	res.sendFile('landing.html', { root: path.join(__dirname, '../../public') });
+
+};
+
+module.exports.postRegister = function(req,res) 
+{
+	res.redirect('/');
+};
+
+//Get login page
+module.exports.postLogin = function(req,res) 
+{
+	res.sendFile('landing.html', { root: path.join(__dirname, '../../public') });
+
+};

@@ -60,14 +60,14 @@ body, html {
   }
   
   input[name="searchBar"]{
-  		width:400px;
-  		height:30px;
-font-size:large;
+  		width:400px ;
+  		height:40px ;
+        font-size:large;
   }
   
     input[name="button"]{
   		width:100px;
-  		height:35px;
+  		height:40px;
   		font-size:large;
       font-weight:bold;
   		

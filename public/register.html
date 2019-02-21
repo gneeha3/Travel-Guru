@@ -5,30 +5,31 @@
 <title>Travel Guru</title>
 </head>
 <body>
-	<form method="post" action="index.html">
+	<form method="post" action="/register">
 		<fieldset>
 			<legend>User Registration</legend>
 			<p>
-				<label>First name:</label> <input name="firstName" type="text" />
+				<label>First name:</label> <input name="firstName" type="text" required />
 			</p>
 			<p>
-				<label>Last name:</label> <input name="lastName" type="text" />
+				<label>Last name:</label> <input name="lastName" type="text"  required/>
 			</p>
 			<p>
-				<label>Email Address:</label> <input name="emailAddress" type="text" />
+				<label>Email Address:</label> <input name="emailAddress" type="email" required />
 			</p>
 			<p>
 				<label>Phone Number:</label> <input name="phoneNumber" type="number" />
 			</p>
 			<p>
-				<label>Password:</label> <input name="password" type="text" />
+				<label>Password:</label> <input name="password" type="password" required/>
 			</p>
 			<p>
-				<label>Confirm Password:</label> <input name="ConfirmPassword" type="text" />
+				<label>Confirm Password:</label> <input name="ConfirmPassword" type="password" required  />
 			</p>
 			<p>
 				<input type="submit" value="Register" />
-				<input type="button" value="Cancel" />
+				<input type="reset" value="Reset" />
+				<input type="button" value="Cancel"  onclick="window.location.href='/'"/>
 			</p>
 		</fieldset>
 	</form>
