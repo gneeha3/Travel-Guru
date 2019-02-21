@@ -8,4 +8,6 @@ router.get('/register', cntrMain.register)
 router.get('/login', cntrMain.login)
 router.post('/register', cntrMain.postRegister)
 router.post('/login', cntrMain.postLogin)
+router.post('/search', cntrMain.search)
+
 module.exports = router;

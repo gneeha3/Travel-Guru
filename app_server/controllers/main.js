@@ -43,6 +43,23 @@ function sendPage(fileName, result)
 /*
  * GET home page.
  */
+
+function sendBody(text, result)
+{
+	console.log("1");
+    var html = '<!DOCTYPE html>\n'
+        + '<html lang="en-US">\n'
+        + '<head>\n'
+        + '    <meta charset="UTF-8">\n'
+        + '    <title>Form Examples</title>\n'
+        + '</head>\n'
+        + '<body>\n'
+        + '    ' + text + '\n'  // insert the body text
+        + '</body>\n'
+        + '</html>\n';
+    
+    result.send(html);    
+}
 module.exports.home = function(req,res) 
 {
 	res.sendFile('landing.html', { root: path.join(__dirname, '../../public') });
@@ -114,3 +131,28 @@ module.exports.postLogin = function(req,res)
     }
 
 };
+
+//location details
+const cities = [
+	{
+		id: 1, type: "San Francisco", desc: "San Francsico hotels"
+	},
+	{
+		id: 2, type: "Sacra Mento", desc: "Sacra Mento hotels"
+	}
+];
+
+module.exports.search = function(req,res) 
+{
+	var city= req.body.search;
+
+    let matchedCity = cities.filter(val => {
+        return ((val.type === city));
+    })
+    console.log(city);
+    console.log(matchedCity);
+    sendBody(city,res);
+
+};
+
+
