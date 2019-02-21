@@ -3,36 +3,58 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Travel Guru</title>
+<link rel="stylesheet" href="stylesheets/register.css" />
+<link rel="stylesheet" href="stylesheets/landing.css" />
 </head>
 <body>
+<div class="wrap_header">
+			<a href="/"><img src="images\icon.jpg" alt="IMG-LOGO" class="icon" /></a>
+			<div class="header-icons">
+				<a href="/register" class="header-icon1"> Register</a>
+				<span class="line"></span>
+				<a href="/login" class="header-icon2"> Login</a>
+			</div>
+		</div>
+	<div class="registration-form">
 	<form method="post" action="/register">
-		<fieldset>
+		<fieldset >
 			<legend>User Registration</legend>
 			<p>
-				<label>First name:</label> <input name="firstName" type="text" required />
+				<label class="form-label">First name:</label> 
+				<input name="firstName" type="text" placeholder="First Name" required />
 			</p>
 			<p>
-				<label>Last name:</label> <input name="lastName" type="text"  required/>
+				<label class="form-label">Last name:</label> 
+				<input name="lastName" type="text" placeholder="Last Name" required/>
 			</p>
 			<p>
-				<label>Email Address:</label> <input name="emailAddress" type="email" required />
+				<label class="form-label">Email Address:</label> 
+				<input name="emailAddress" type="email" placeholder="xxx@xxx.xxx" required />
 			</p>
 			<p>
-				<label>Phone Number:</label> <input name="phoneNumber" type="number" />
+				<label class="form-label">Phone Number:</label> 
+				<input name="phoneNumber" type="text" placeholder = "(999) 999-999" pattern = "^\(\d{3}\) *\d{3}-\d{4}$"
+/>
 			</p>
 			<p>
-				<label>Password:</label> <input name="password" type="password" required/>
+				<label class="form-label">Password:</label> 
+				<input name="password" type="password" required placeholder="Password"/>
 			</p>
 			<p>
-				<label>Confirm Password:</label> <input name="ConfirmPassword" type="password" required  />
+				<label class="form-label">Confirm Password:</label> 
+				<input name="confirmPassword" type="password" required placeholder="Password"  />
 			</p>
+			<div class="form-buttons">
 			<p>
 				<input type="submit" value="Register" />
 				<input type="reset" value="Reset" />
 				<input type="button" value="Cancel"  onclick="window.location.href='/'"/>
 			</p>
+			</div>
 		</fieldset>
+
 	</form>
+			</div>
 
 </body>
 </html>

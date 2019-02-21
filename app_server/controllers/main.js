@@ -3,6 +3,7 @@
  */
 var lineReader = require('line-reader');
 var path = require('path');
+var registeredUsers = [];
 
 /**
  * Send the contents of an HTML page to the client.
@@ -38,28 +39,6 @@ function sendPage(fileName, result)
         });
 }
 
-/**
- * Send the contents of an HTML page to the client
- * with an inserted body text.
- * @param text the body text.
- * @param result the HTTP result.
- */
-function sendBody(text, result)
-{
-    var html = '<!DOCTYPE html>\n'
-        + '<html lang="en-US">\n'
-        + '<head>\n'
-        + '    <meta charset="UTF-8">\n'
-        + '    <title>Form Examples</title>\n'
-        + '</head>\n'
-        + '<body>\n'
-        + '    ' + text + '\n'  // insert the body text
-        + '</body>\n'
-        + '</html>\n';
-    
-    result.send(html);    
-}
-
 
 /*
  * GET home page.
@@ -80,18 +59,58 @@ module.exports.register = function(req,res)
 //Get login page
 module.exports.login = function(req,res) 
 {
-	res.sendFile('landing.html', { root: path.join(__dirname, '../../public') });
+	res.sendFile('login.html', { root: path.join(__dirname, '../../public') });
 
 };
 
 module.exports.postRegister = function(req,res) 
 {
-	res.redirect('/');
+
+    var existingUser = registeredUsers.filter(function(user)
+    {
+    	return user.emailAddress === req.body.emailAddress;
+    });
+        
+
+    if (existingUser.length > 0)
+    {
+    	//res.render('error.jade',{message: 'User already exists!!!'})
+		res.send("User Already exists! Please login with your credentials");
+    }
+    
+        
+    else
+    {
+    	var user = {    firstName: req.body.firstName, 
+    					lastName: req.body.lastName,
+    					emailAddress: req.body.emailAddress,
+    					phoneNumber: req.body.phoneNumber,
+    					password: req.body.password
+                      };
+    	registeredUsers.push(user);
+    	console.log(req.body);
+    	res.redirect('/');
+    }
 };
 
-//Get login page
 module.exports.postLogin = function(req,res) 
 {
-	res.sendFile('landing.html', { root: path.join(__dirname, '../../public') });
+    var matches = registeredUsers.filter(function(user)
+                  {
+                      return    (((user.emailAddress === req.body.emailAddress)) 
+                             && (user.password === req.body.password));
+                  });
+    
+    
+    if (matches.length === 0)
+    {
+		res.send("Invalid credentials..Please register before login !! ");
+
+    }
+    else
+    {
+    	res.render('loggedin', { name: matches[0].firstName});
+;
+    }
 
 };

@@ -65,7 +65,7 @@ body, html {
         font-size:large;
   }
   
-    input[type="submit"]{
+   .search_place input[type="submit"]{
   		width:100px;
   		height:40px;
   		font-size:large;

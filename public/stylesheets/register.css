@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+body{
+	font-size:large;
+}
+.registration-form { 
+position:relative;
+margin: 0 auto; 
+width:400px;
+top:50px;
+}
+
+.form-label{
+	display: inline-block;
+    width:150px;
+    text-align: right;
+}
+
+.form-buttons{
+	position:relative;
+	left:80px;
+}
+
+

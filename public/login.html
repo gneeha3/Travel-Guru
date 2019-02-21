@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Travel Guru</title>
+<link rel="stylesheet" href="stylesheets/landing.css" />
+<link rel="stylesheet" href="stylesheets/register.css" />
+</head>
+<body>
+<div class="wrap_header">
+			<a href="/"><img src="images\icon.jpg" alt="IMG-LOGO" class="icon" /></a>
+			<div class="header-icons">
+				<a href="/register" class="header-icon1"> Register</a>
+				<span class="line"></span>
+				<a href="/login" class="header-icon2"> Login</a>
+			</div>
+		</div>
+	<div class="registration-form">
+	<form method="post" action="/login">
+		<fieldset>
+			<legend>User Login</legend>
+			<p>
+				<label class="form-label">Email Address:</label> 
+				<input name="emailAddress" type="email" placeholder="xxx@xxx.xxx" required />
+			</p>
+			<p>
+				<label class="form-label">Password:</label> 
+				<input name="password" type="password" placeholder="Password" required/>
+			</p>
+			<div class="form-buttons">
+			<p>
+				<input type="submit" value="Login" />
+				<input type="reset" value="Reset" />
+				<input type="button" value="Cancel"  onclick="window.location.href='/'"/>
+			</p>
+			</div>
+		</fieldset>
+	</form>
+	</div>
+
+</body>
+</html>
