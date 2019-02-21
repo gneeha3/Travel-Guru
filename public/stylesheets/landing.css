@@ -65,7 +65,7 @@ body, html {
         font-size:large;
   }
   
-    input[name="submit"]{
+    input[type="submit"]{
   		width:100px;
   		height:40px;
   		font-size:large;
