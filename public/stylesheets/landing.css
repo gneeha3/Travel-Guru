@@ -59,13 +59,13 @@ body, html {
             left: 450px;
   }
   
-  input[name="searchBar"]{
+  input[name="search"]{
   		width:400px ;
   		height:40px ;
         font-size:large;
   }
   
-    input[name="button"]{
+    input[name="submit"]{
   		width:100px;
   		height:40px;
   		font-size:large;
