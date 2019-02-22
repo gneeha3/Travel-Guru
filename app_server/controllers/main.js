@@ -216,8 +216,7 @@ module.exports.search = function(req,res)
     let matchedCity = cities.filter(val => {
         return ((val.city === city));
     })
-    console.log(city);
-    console.log(matchedCity);
+
     res.render('search', {city:city ,hotels: matchedCity});
 
 };

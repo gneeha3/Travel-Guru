@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -44,3 +43,20 @@ td:nth-child(2) {
  td:nth-child(4) {
  width: 200px;
  }
+ 
+
+ .icon{
+    width: 160px;
+    height: 80px;
+}
+
+  .wrap_header {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border: 1px solid black;
+    padding:0px;
+  }
+  .welcome-message{
+  text-align:center;
+  }
