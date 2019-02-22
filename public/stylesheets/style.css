@@ -1,10 +1,46 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-weight:bold;
-  color :blue;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+
+.page-title{
+	color:green;
+	text-align:center;
+}
+
+.table-header{
+	  text-align:center !important;
+	  font-weight:bold !important;
+}
+
+.table-rows{
+
+}
+
+td{
+    border-bottom: 1px solid #ddd;
+     padding: 8px;
+       column-width: 900px;
+}
+.city-table{
+	
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+td:nth-child(1) {
+  width: 200px;
+  }
+td:nth-child(2) {
+ width: 800px;
+ }
+ td:nth-child(3) {
+ width: 100px;
+ }
+ td:nth-child(4) {
+ width: 200px;
+ }

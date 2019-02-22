@@ -1,0 +1,21 @@
+extends layout
+
+block content
+ h1(class="page-title") Recommended hotels to stay in #{city}
+ -var hotellist = hotels
+ div
+   table.table.table-hover(class="city-table")
+    div
+      thead
+          tr(class="table-header")
+           td='Hotel Name'
+           td='About hotel'
+           td='Price per night'
+           td='Contact Info'
+    tbody
+      each hotel in hotels
+        tr(class="table-rows")
+          td=hotel.name
+          td=hotel.desc
+          td=hotel.price
+          td=hotel.phone
