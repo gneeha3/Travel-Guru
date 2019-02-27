@@ -1,0 +1,20 @@
+.animation-div{
+ width: 100px;
+ height: 100px;
+ position: relative;
+ animation-name: globe;
+ animation-duration: 14s;
+ animation-delay: 2s;
+}
+
+@keyframes globe {
+ 0%   {left:300px; top:0px;}
+ 25%  {left:600px; top:0px;}
+ 50%  {left:600px; top:300px;}
+ 75%  {left:300px; top:300px;}
+ 100% {left:300px; top:0px;}
+}
+
+.animation-text{
+ padding-left: 450px;
+}

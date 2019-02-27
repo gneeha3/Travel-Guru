@@ -13,7 +13,7 @@ var registeredUsers = [];
 function sendPage(fileName, result)
 {
     var html = '';
-    
+
     // Read the file one line at a time.
     lineReader.eachLine(fileName,
         /**
@@ -27,10 +27,10 @@ function sendPage(fileName, result)
         {
             html += line + '\n';
 
-            if (last) 
-            { 
+            if (last)
+            {
                 result.send(html);
-                return false; 
+                return false;
             }
             else
             {
@@ -44,45 +44,52 @@ function sendPage(fileName, result)
  * GET home page.
  */
 
-module.exports.home = function(req,res) 
+module.exports.home = function(req,res)
 {
 	res.sendFile('landing.html', { root: path.join(__dirname, '../../public') });
 
 };
 
 //Get registration page
-module.exports.register = function(req,res) 
+module.exports.register = function(req,res)
 {
 	res.sendFile('register.html', { root: path.join(__dirname, '../../public') });
 
 };
 
 //Get login page
-module.exports.login = function(req,res) 
+module.exports.login = function(req,res)
 {
 	res.sendFile('login.html', { root: path.join(__dirname, '../../public') });
 
 };
 
-module.exports.postRegister = function(req,res) 
+//Get about page
+module.exports.about = function(req,res)
+{
+	res.sendFile('about.html', { root: path.join(__dirname, '../../public') });
+
+};
+
+module.exports.postRegister = function(req,res)
 {
 
     var existingUser = registeredUsers.filter(function(user)
     {
     	return user.emailAddress === req.body.emailAddress;
     });
-        
+
 
     if (existingUser.length > 0)
     {
     	//res.render('error.jade',{message: 'User already exists!!!'})
 		res.send("User Already exists! Please login with your credentials");
     }
-    
-        
+
+
     else
     {
-    	var user = {    firstName: req.body.firstName, 
+    	var user = {    firstName: req.body.firstName,
     					lastName: req.body.lastName,
     					emailAddress: req.body.emailAddress,
     					phoneNumber: req.body.phoneNumber,
@@ -94,15 +101,15 @@ module.exports.postRegister = function(req,res)
     }
 };
 
-module.exports.postLogin = function(req,res) 
+module.exports.postLogin = function(req,res)
 {
     var matches = registeredUsers.filter(function(user)
                   {
-                      return    (((user.emailAddress === req.body.emailAddress)) 
+                      return    (((user.emailAddress === req.body.emailAddress))
                              && (user.password === req.body.password));
                   });
-    
-    
+
+
     if (matches.length === 0)
     {
 		res.send("Invalid credentials..Please register before login !! ");
@@ -209,7 +216,7 @@ const cities = [
 	}
 ];
 
-module.exports.search = function(req,res) 
+module.exports.search = function(req,res)
 {
 	var city= req.body.search;
 
@@ -220,5 +227,3 @@ module.exports.search = function(req,res)
     res.render('search', {city:city ,hotels: matchedCity});
 
 };
-
-

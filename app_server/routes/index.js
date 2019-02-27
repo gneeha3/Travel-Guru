@@ -9,5 +9,6 @@ router.get('/login', cntrMain.login)
 router.post('/register', cntrMain.postRegister)
 router.post('/login', cntrMain.postLogin)
 router.post('/search', cntrMain.search)
+router.get('/about', cntrMain.about)
 
 module.exports = router;
