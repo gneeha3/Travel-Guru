@@ -6,8 +6,53 @@
 <link rel="stylesheet" href="stylesheets/landing.css" />
 <link rel="stylesheet" href="stylesheets/register.css" />
 <link rel="stylesheet" href="stylesheets/about.css" />
+
+<script type="text/javascript">
+
+        var con;
+        var image;
+        
+        var x  = 0;
+        var y  = 0;
+        var dx = 10;
+        var dy = 7;
+        
+        function init()
+        {
+            var canvas = document.getElementById("canvas");
+            con = canvas.getContext("2d");
+            
+            con.fillStyle = "white";
+            
+            image = new Image();
+            image.src = "./images/globe.jpeg";
+            image.addEventListener('load', function() {
+  				con.drawImage(image, x, y,200,200); 
+			}, false);
+            
+            canvas.onclick=mouseClick;
+        }
+        function draw()
+        {
+            //con.fillRect(0, 0, 200, 200);
+  			con.drawImage(image, x, y,200,200); 
+  			
+  			x += dx;
+            y += dy;
+            
+            if ((x < 0) || (x > 0)) dx = -dx;
+            if ((y < 0) || (y > 0)) dy = -dy;
+            
+        }
+        
+        function mouseClick(event)
+        {
+        setInterval(draw,200);
+        }
+   </script>
 </head>
-<body>
+
+<body onload="init()">
 <div class="wrap_header">
 			<a href="/"><img src="images\icon.jpg" alt="IMG-LOGO" class="icon" /></a>
 			<div class="header-icons">
@@ -18,11 +63,16 @@
 				<a href="/register" class="header-icon1"> Register</a>
 				<span class="line"></span>
 				<a href="/login" class="header-icon2"> Login</a>
-			</div>
-	</div>
+			</div>		
+</div>
 	<div class="animation-text"><p><b>Animation and Canvas</b></p></div>
-	<div class="animation-div">
-		<img src="./images/globe.jpeg"></img>
-	</div>
+	
+	
+<canvas id = "canvas"
+        	height = "200"
+        	width ="200">
+    	<p>Your browser does not support the canvas tag.</p>
+</canvas>
+
 </body>
 </html>
