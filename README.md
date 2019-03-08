@@ -14,3 +14,12 @@ functionality
 		-Los Angeles
 		-Las vegas
 		-San Francisco
+	Add survey page-we used ajax tabs
+	--in visit details page
+		-we use dropdown and date picker widget
+	--in review page
+		-we used slider widget
+	--in upload picture
+		-drag and drop is demonstrated
+	--in contact details
+		-name number and email id of user is captured
